@@ -16,11 +16,10 @@ function mayoriaDeEdad(edad) {
    // Si tiene 18 años ó más debe retornar el string: "Allowed".
    // Caso contrario: "Not allowed".
    // Tu código:
-   if (edad >= 18){
+   if (edad >= 18) {
       return 'Allowed'; 
-   }
-   else{
-      return 'Not Allowed'
+   } else {
+      return 'Not allowed';
    }
 }
 
@@ -159,9 +158,19 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
-
-   if(Number.isInteger(num)){return true};
-   {return false;}
+   
+   var contador = 0;
+   for (i = 1; i <= num; i++){
+      if (num % i === 0){
+         contador++
+      }
+   }
+   if (contador == 2){
+      return true;
+   }else{
+      return false;
+   }
+   
 }
 
 function esVerdadero(valor) {
@@ -176,10 +185,12 @@ function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
-   if ( num > 100 && num < 1000) return true;
-   else return false;
-}
-
+   if (num >= 100 && num < 1000) {
+      return true;
+   } else {
+      return false;
+   }
+}   
 function doWhile(num) {
    // Implementar una función que aumente el valor recibido en 5 hasta un límite de 8 veces.
    // Retornar el valor final.
@@ -187,6 +198,7 @@ function doWhile(num) {
    // Tu código:
    i = 0
    do {
+      i++
       num = num + 5 
    } while(i < 8);
    return num;
